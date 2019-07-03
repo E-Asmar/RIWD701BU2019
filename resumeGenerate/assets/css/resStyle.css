@@ -1,0 +1,33 @@
+ul{
+	width:30em;
+}
+ul li{
+	float:left;
+	width:9em;
+}/*stop the float*/
+br{
+	clear:left;
+}/*separate the list from subsuquint markup*/
+div.wrapper{
+	margin-bottom: 1em;
+}
+.resumeDisplay1 h3{
+	text-align: center;
+	background-color: #e21111;
+	color: lightgrey;
+}
+.resumeDisplay1 .userInfo{
+	text-align: right
+}
+.resumeDisplay1 .userInfo h2{
+	background-color: #cd0000;
+	color:white;
+}
+.resumeDisplay1 .education h5, .resumeDisplay1 .employment h4{
+	text-decoration: underline;
+	text-decoration-color: #cd0000;
+}
+.resumeDisplay .employment li{
+	list-style-type: cambodian;
+	color: #cd0000;
+}

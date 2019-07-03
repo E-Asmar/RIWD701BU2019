@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CS701 Term Project</title>
+	<link rel="stylesheet" href="./assets/css/resStyle.css"> 
+	<script src="./assets/js/angularJS178.js" type="text/javascript"></script>
+	<!--use bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script> -->
+	<!-- <script src="assets/js/formExample.js"></script> -->
+	<script src="./controllers/studentApp.js" type="text/javascript"></script>
+	<script src="./controllers/resumeDataController.js" type="text/javascript"></script>
+	<!-- <script src="./controllers/dataDispaly.js" type="text/javascript"></script> -->
+
+</head>
+<body ng-app="resumeDataApp" >
+
+<div ng-controller="pageSelectorController">
+	<p>--For data collection use 'data Collector'.<br/>
+	--To see your data laid out in a formated template please use any number of the including 'Resume Display' views.<br/>
+	--If you wish to search for employment, look at the API views 'USA JOBs' and 'git Hub Jobs'.</p>
+
+	You are currently looking at <br/> 
+	<select ng-model="template" ng-options="t.name for t in selectors">
+		<option value="">(blank)</option>
+	</select>
+	<hr/>
+	<div class="slide-animation-container">
+		<div class="slide-animate" ng-include="template.url">
+		</div>
+	</div>
+</div>
+
+	<footer></footer>
+</body>
+</html>

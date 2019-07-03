@@ -1,0 +1,97 @@
+<div class="resumeDataCollector container" >
+	<div ng-controller="userDataController as user">
+
+		<form ng-submit="update(user)">
+			<h3>User Data</h3>
+						
+			<label><input type="text" placeholder="Frist Name" id="firstName" name="firstName" ng-model="user.firstName" /> </label>
+			<label><input type="text" placeholder="Last Name" id="lastName" name="lastName" ng-model="user.lastName" /></label>
+			<br/>
+			
+
+			<label><input type="text" placeholder="Phone Number"  id="phoneNumber" name="phoneNumber" ng-model=user.phoneNumber></label><br/>
+			
+			<label><input type="text" placeholder="Street Address" id="streetAddress" name="streetAddress" ng-model=user.streetAddress></label>
+						
+			<label><input type="text" placeholder="City" id="city" name="city" ng-model=user.city></label><br/>
+						
+			<label><input type="text" placeholder="State" id="state" name="state" ng-model=user.state></label>
+						
+			<label><input type="text" placeholder="Zip Code" id="zipCode" name="zipCode" ng-model=user.zipCode></label><br/>
+			<label><button type="submit" class="btn btn-success">save</button></label><br/>
+		</form>
+	</div>
+		<div ng-controller="skillDataController as skills">
+		<form ng-submit="">
+			<h3>skills</h3>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="skill in skills track by $index">
+						<td>
+				<label ><input type="text" placeholder="Skill" id="skill" ng-model="skill.skill" value=""></td>
+					<td><button type="" class="btn btn-warning" ng-click="removeSkill(skill)">Remove</button> </td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- <div ng-repeat="skill in skills">
+				<label ><input type="text" placeholder="Skill" id="skill" ng-model="skill.skill" value=""></label> <label><button type="" class="btn btn-warning" ng-click="removeSkill(skill)">Remove</button> <br/>
+			</div> -->
+			<button type="" class="btn btn-primary" ng-click="addSkill(skill)">Add Skill</button>
+			<label><button ng-click="skillUpdate(skills)" type="Submit"class="btn btn-success">save</button></label><br/>
+		</form>
+	</div>
+	<div ng-controller="educationDataController">
+
+		<h3> Education </h3>
+		
+
+		<form ng-submit="">
+			<div ng-repeat="school in schools track by $index">
+			<label><input type="text" name="school" value="" id="school" placeholder="School Name" ng-model="school.school"></label>
+			<label><input type="text" name="schoolLocation" id="schoolLocation" placeholder="School Location" value=""ng-model="school.schoolLocation"></label><br/>
+			<label><input type="text" placeholder="Graduation Year" id="graduationYear" ng-model="school.graduationYear" name="graduationYear" value=""></label> <br/>
+			<label><input type="text" name="degreeProgram" placeholder="Degree Earned" id="degreeProgram" ng-model="school.degreeProgram" value=""></label>
+			<label><input type="text" name="degreeMajor" placeholder="Major" id="degreeMajor" ng-model="school.degreeMajor" value=""></label><br/>
+			<label><button ng-click="removeSchool(school)" class="btn btn-warning">remove</button></label>
+			</div>
+
+			<label><button type="" class="btn btn-secondary" ng-click="addSchool(school)">Add education</button></label>
+			<label><button ng-click="saveSchools(schools)" type=""class="btn btn-success">save</button></label><br/>
+		</form>
+
+	</div>
+	<div ng-controller="employeementDataController">
+		<form ng-submit="">
+			<h3>Employment History</h3>
+			<div ng-repeat="employement in employements track by $index">
+				<!-- {{$index}} -->
+			<label><input type="text" name="company" value="" id="company" placeholder="Company name" ng-model="employement.company"></label>
+			<label><input type="text" name="position" value="" id="position" placeholder="Position Title" ng-model="employement.position"></label><br/>
+			<textarea id="jobDesc" name="jobDesc" placeholder="Job description" value="" ng-model="employement.jobDesc"></textarea> <br/>
+			<!-- <label><input type="text" name="desc" value="" id="desc" placeholder="description" ng-model="desc"></label> -->
+			<label><input type="text" name="startDate" value="" id="stateDate" placeholder="Start Date" ng-model="employement.startDate"></label>
+			<label><input type="text" name="endDate" value="" id="endDate" placeholder="End Date" ng-model="employement.endDate"></label><br/>
+
+			<div ng-repeat="jSkill in employement.jobSkill track by $index">
+				<label><input type="text" name="jobSkill" value="" id="jobSkill" placeholder="Position skills" ng-model="jSkill.jSkill"></label>
+				<label><button id='{{$index}}' value="{{$index}}" ng-click="removeJSkill(jSkill)" class="btn btn-warning">remove skill</button></label>
+				<br/>
+			</div>
+			<label><button type="" class="btn btn-primary" ng-click="addJSkill(employement.jobSkill)">Add Skill</button></label><br/>
+
+			<label><button ng-click="removeEmployement(employement)" class="btn btn-warning">remove employment</button></label>
+		</div>
+
+			<label><button ng-click="saveEmployement(employements)" type=""class="btn btn-success">save</button></label>
+			
+			<label><button type="" ng-click="addEmployement(employement)" class="btn btn-secondary" ng-click="">Add employeement</button></label>
+
+			</form>
+		</div>
+	</div>
+</div>

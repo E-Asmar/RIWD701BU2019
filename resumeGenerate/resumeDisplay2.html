@@ -1,0 +1,40 @@
+<section class="container resumeDisplay" ng-controller="displayData as data">
+
+	<div class="userInfo">
+		<p><h2>{{user.firstName}} {{user.lastName}} </h2></p>
+	</div>
+
+	<div class="education">
+		<h3>Education</h3>
+		<div ng-repeat="school in schools">
+			<h5>{{school.school}}</h5><i>{{school.schoolLocation}}</i><br/>
+			{{school.degreeProgram}} in {{school.degreeMajor}} -
+			{{school.graduationYear}}
+		</div>
+	</div>
+<aside>
+	<div class="skills wrapper">
+		<h3>Skills</h3>
+		<p>Experianced with : </p>
+		<ul ng-repeat="skill in skills">
+			<li>{{skill.skill}}</li>
+		</ul><br>
+	</div>
+</aside>
+	<div class="employment">
+		<h3>Experiance</h3>
+		<div ng-repeat="employement in employements">
+			<h4>{{employement.position}}</h4>
+			<i>{{employement.company}} </i>{{employement.startDate}} -- {{employement.endDate}}<br/>
+			<ul >
+				<li ng-repeat="jSkill in employement.jobSkill">{{jSkill.jSkill}}</li>
+			</ul><br>
+		</div>
+		
+	</div>
+<div class="footer">
+	<i><h6>Phone: {{user.phoneNumber}} <br/>
+	Address:  {{user.streetAddress}} - {{user.city}} - {{user.state}} - {{user.zipCode}}</h6></i>
+</div>
+	
+</section>

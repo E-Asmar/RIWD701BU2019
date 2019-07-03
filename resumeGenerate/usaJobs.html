@@ -1,0 +1,36 @@
+<!-- <script>
+	var request = require('request');  
+	              
+	var host = 'data.usajobs.gov';  
+	var userAgent = 'PatrickM.Waite@gmail.com';  
+	var authKey = 'AXw9Sb4Pgx2Rx/xNUrUdsXjj/VV7neWUY6+D2EUsnV0=';    
+	            
+	request({      
+	    url: 'https://data.usajobs.gov/api/search?JobCategoryCode=2210',      
+	    method: 'GET',      
+	    headers: {          
+	        "Host": host,          
+	        "User-Agent": userAgent,          
+	        "Authorization-Key": authKey      
+	    }  
+	}, function(error, response, body) {      
+	    var data = JSON.parse(body);  
+
+	});
+	console.log(data);
+</script> "-->
+
+<div class="container" ng-controller="apiUSAJOBSCallController">
+	<!-- MatchedObjectDescriptor<br/>
+		{{usaJobRes.SearchResult.SearchResultItems.MatchedObjectDescriptor}} -->
+
+	<ui ng-repeat="job in usaJobRes">
+
+
+		<li><a href="{{job.MatchedObjectDescriptor.PositionURI}}" target="_blank">{{job.MatchedObjectDescriptor.PositionTitle}}</a></li>
+			
+	</ui>
+
+	<!-- {{usaJobRes.data | json }} -->
+
+</div>

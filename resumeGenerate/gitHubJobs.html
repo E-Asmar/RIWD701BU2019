@@ -1,0 +1,20 @@
+<div class="gitJobs container" ng-controller="apiGitCallController">
+	<!-- <div ng-repeat="skill in skills">
+		{{skill.skill}}
+		<div ng-repeat="job in gitRes">
+		<a href="" target="_blank">{{job.title}}</a> 
+		</div>
+	</div> -->
+
+	<ui ng-repeat="job in gitRes">
+
+		<li><a href="{{job.url}}" target="_blank">{{job.title}}</a></li>
+			
+	</ui>
+	
+<!-- 	<div ng-repeat="job in gitRes">
+
+		<a href="{{job.url}}" target="_blank">{{job.title}}</a>
+			
+	</div> -->
+</div>
